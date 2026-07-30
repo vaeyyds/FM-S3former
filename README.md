@@ -23,32 +23,6 @@ from the transmitted baseband signal. The design unifies three ideas:
    layers, so dominant distortion is captured first, and weaker structure is
    refined later.
 
----
-
-## Architecture
-
-```
-        I/Q chunk  (L × 2)
-              │
-        patch split (P) ───────────► self-derived features  c = [amp]  or  [amp, Δφ]
-              │                                     │
-        PatchEmbedding                         g_FiLM(c) → (γ, β)
-              │                                     │
-        + positional  ◄──────── FiLM_in ◄───────────┤
-              │                                     │
-     ┌────────▼─────────┐                           │
-     │     Encoder      │   layer d = 1 … D         │
-     │ subtractive      │──► O^(d) ─ FiLM_out ─ head ─► Ŷ^(d)   (deep supervision)
-     │ residual blocks  │                           │
-     └────────┬─────────┘                           │
-        Σ_d O^(d) ───────────── FiLM_out ◄──────────┘
-              │
-            head ──► Ŷ_NL     (nonlinear SI estimate)
-```
-
-FiLM is applied twice per depth: once on the input tokens and once on each
-layer's output before decoding. The final estimate is the sum of all per-layer
-cancellation components.
 
 ---
 
