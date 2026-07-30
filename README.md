@@ -31,11 +31,11 @@ from the transmitted baseband signal. The design unifies three ideas:
 ```
 fm_s3former/
 ├── __init__.py
-├── components.py  # FullAttention, AttentionLayer, EncoderLayer, Encoder
+├── components.py  
 ├── film.py        # FiLM
 ├── patch.py       # PatchEmbedding, PatchOutputHead
 ├── model.py       # FMS3former
-├── run.py         # training / evaluation entry point
+├── run.py         # training / evaluation
 ├── README.md
 └── .gitignore
 ```
