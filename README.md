@@ -16,12 +16,11 @@ from the transmitted baseband signal. The design unifies three ideas:
    neighboring outputs and amortizing inference cost. Consecutive input samples
    are grouped into non-overlapping patches to keep the token sequence compact.
 2. **FiLM feature modulation** — repeatedly conditions the signal representation
-   on self-derived features (amplitude, and instantaneous frequency for LFM) via
-   feature-wise scaling and shifting, giving expressive multiplicative
+   on self-derived features via feature-wise scaling and shifting, giving expressive multiplicative
    feature–signal interactions instead of one-off input concatenation.
 3. **Successive residual cancellation** — each encoder layer emits its own
    cancellation component and is supervised on the residual left by preceding
-   layers, so dominant distortion is captured first and weaker structure is
+   layers, so dominant distortion is captured first, and weaker structure is
    refined later.
 
 ---
