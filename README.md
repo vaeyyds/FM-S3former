@@ -3,8 +3,6 @@
 **Feature-Modulated Sequence-to-Sequence Successive Cancellation Transformer for
 Digital In-Band Full-Duplex Self-Interference Cancellation**
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-1.80%2B-ee4c2c)
 
 FM-S³former is a neural canceller for the **digital stage** of self-interference
 cancellation (SIC) in in-band full-duplex (IBFD) radios. It reconstructs the
